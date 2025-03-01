@@ -1,101 +1,57 @@
 import Image from "next/image";
+import InternetAdoptionStory from './components/InternetAdoptionStory';
+import FixedBackgroundStory from './components/FixedBackgroundStory';
+import DesignRationale from './components/DesignRationale';
+import FinalReflection from './components/FinalReflection';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen">
+      <div className="relative">
+        {/* Header Section */}
+        <div className="relative z-20 bg-white">
+          <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl font-bold text-center mb-8 pt-8 pb-4">
+              The World is Rapidly Achieving Widespread Internet Usage
+            </h1>
+            <p className="text-lg mb-2 pl-10"> Vis & Society (Spring 2025) Assignment 4: Persuasive or Deceptive Visualization? </p>
+            <p className="text-lg mb-8 pl-10">Author: Ryan Yen</p>
+            <div className="flex mx-auto flex-row mb-20">
+              <p className="mt-8 mb-8 text-lg w-1/2 mx-auto">
+                A total of 5.56 billion people around the world were using the internet at the start of 2025, equivalent to 67.9 percent of the world's total population. This impressive figure means that internet users are now a "supermajority", with more than twice as many people using the internet as not
+                <a href="https://datareportal.com/global-digital-overview#:~:text=A%20total%20of%205.56%20billion,using%20the%20internet%20as%20not." target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-700"> (source). </a>
+                From 1990 to 2020, the global internet usage has reportedly grown by an astonishing <span className="font-bold text-blue-500"> 30.69% (with a notably high standard deviation of 38.53%). </span>
+                On the surface, these numbers imply a remarkable surge in connectivity: more and more people can go online, access digital services, and participate in the global economy.
+              </p>
+              <Image src="/imgs/internet_boost_global.png" alt="Global Internet Usage" width={1000} height={1000} className="w-2/5 mx-auto h-1/2" />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Fixed Background Story Section */}
+        <section className="relative h-[600vh]">
+          <FixedBackgroundStory />
+        </section>
+
+        {/* Regular Scrollytelling Section */}
+        <section className="relative z-20 bg-white pt-20">
+          <h2 className="text-3xl font-bold mb-4 text-center px-4">A Step-by-Step Reveal of Deceptive Design Choices</h2>
+          <p className="mb-4 text-center px-4">Here's how each design choice shaped (and sometimes distorted) the audience's perception: </p>
+          <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <InternetAdoptionStory />
+          </div>
+        </section>
+
+        {/* Design Rationale Section */}
+        <section className="relative z-20 bg-white">
+          <DesignRationale />
+        </section>
+
+        {/* Final Reflection Section */}
+        <section className="relative z-20">
+          <FinalReflection />
+        </section>
+      </div>
+    </main>
   );
 }
